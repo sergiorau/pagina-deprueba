@@ -1,0 +1,339 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	list-style-type: none;
+	text-decoration: none;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+body{
+	overflow-x: hidden;	
+}
+
+.container{
+	width: 1400px;
+	max-width: 100%;
+	min-height: 100vh;
+	margin: auto;	
+	
+	/*FLEX*/
+	display: flex;
+	flex-direction: column;
+}
+
+section{
+	background: url(img/fondo.jpg) center center no-repeat;
+	background-size: cover;
+	
+
+}
+
+header{
+	margin-bottom: auto;
+	/*FLEX*/
+	display: flex;
+	justify-content: space-between;
+	flex-flow: nowrap row;	
+}
+
+header h1{
+	margin-left: 40px;
+	margin-top: 25px;
+}
+
+header h1 img{
+	width: 110px;
+	height: auto;
+}
+
+header nav ul{
+	
+	/*FLEX*/
+	display: flex;
+	flex-direction: row;
+}
+
+header nav a{
+	padding: 50px  30px;
+	cursor: pointer;
+	color: black;
+	font-weight: bold;
+	display: block;
+}
+
+header nav a:hover{
+	background-color: #e63c3c;
+	color: white;
+}
+
+.linea{
+	border: none;
+}
+
+.elementos{
+	/*FLEX*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: row;
+}
+
+.textos{
+	text-align:center;	
+	margin-left: 0px;
+	
+	flex: 1;
+}
+
+.textos h2{
+	color: black;
+	font-size: 1.8vw;
+	font-weight: bold;
+}
+
+
+.textos h3{
+	color: #d92f2f;
+	font-size: 4.5vw;
+	font-weight: 800;
+}
+
+.textos p{
+	font-weight: bold;
+	font-size: 2.5vw;
+}
+.textos p em{
+	color: black;
+	font-size: 2.1vw;
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
+.textos .boton{
+	background: #e63c3c;
+	font-weight: bold;
+	font-size: 18px;
+	margin-top: 30px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	color: white;
+	padding: 12px 25px;
+	display: inline-block;
+}
+
+.textos .boton:hover{
+	opacity: 0.8;
+	
+}
+
+
+
+.redes-sociales{
+	margin-top: 20px;
+	
+	/*FLEX*/
+	display: flex;
+	justify-content: center;
+}
+
+.redes-sociales li{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+.fa-instagram,
+.fa-facebook,
+.fa-twitter,
+.fa-whatsapp{
+	font-size: 25px;
+	color: black;
+	
+}
+
+.imagen{
+	flex: 1;
+}
+
+.imagen img{
+	width: 100%;
+	
+}
+
+
+footer{
+	margin-top: auto;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	
+}
+
+footer div p:nth-child(1){
+	font-size: 12px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+#check{
+      display: none;
+}
+
+label #btn, label #cancel{
+	position: absolute;	
+	font-size: 40px;
+	cursor: pointer;
+	display: none;
+}
+
+label #btn{
+	right: 30px;
+	top: 25px;
+	transition:.4s;
+}
+
+label #cancel{
+	right: 20px;
+	top: 15px;
+	
+}
+
+
+
+
+
+
+/*MEDIA QUERIES PARA ADAPTAR A DISPOSITIVOS MOVILES*/
+
+@media(max-width:800px){
+
+section{
+	background: url(img/fondo.jpg) left top no-repeat;
+	background-size: cover;
+	
+
+}	
+	
+header h1{
+	margin-left: 30px;
+	margin-top: 18px;
+}
+
+	
+label #btn{
+		display: block;
+	}
+	
+.content-links ul{
+	position: fixed;
+	padding-top: 80px;
+	right: -220px;
+	width: 220px;
+	height: 100vh;
+	background:url(img/fondo.jpg) left top no-repeat;
+	background-size: cover;
+	z-index: 2;
+	flex-direction: column;
+	transition: all .3s ease;
+}
+	
+.content-links ul .linea{
+	    position: absolute;
+	    left: 0;
+	    border: none;
+		height: 3px;
+	    background-color: rgb(206, 84, 90);
+	    width: 0;
+	    transition: .9s;
+	}
+	
+.content-links ul li:hover .linea{
+		width: 100%;
+	}
+	
+.content-links ul li{
+		transition: .4s;
+	}
+	
+.content-links ul li:hover{
+	   padding-left: 30px;
+	}
+		
+.content-links li a{
+		padding:35px 0px 10px 25px;
+	}
+	
+.content-links li a:hover{
+		background-color: transparent;
+	    color: black;
+	}
+		
+#check:checked ~ header .content-links ul{
+		right: 0;
+		box-shadow: 1px 1px 15px black;
+	    transition: all .4s;
+	
+	}
+	
+label #btn:hover{
+		color: #d84848;
+	}	
+	
+label #cancel:hover{
+		color: #d84848;
+	}
+	
+#check:checked ~ label #btn{
+	right: 200px;
+	opacity: 0;
+	
+	}
+	
+#check:checked ~ label #cancel{
+	    display: block;
+	    z-index: 3;
+	    position: fixed;
+	
+	}
+	
+.elementos{
+	  flex-direction: column;
+	  margin-top: 50px;
+	}
+	
+.elementos .imagen{
+		margin: 0px;
+	}
+	
+.textos{
+		margin-left: 0;
+	}
+	
+.textos h2{
+		font-size: 3.5vw;
+	}
+	
+.textos h3{
+		font-size: 9vw;
+	}
+	
+.textos p{
+		font-size: 5vw;
+	}
+	
+.textos p em{
+	padding-left: 0;
+	padding-right: 0;
+	font-size: 4vw;
+	}
+	
+		
+	
+}
+
